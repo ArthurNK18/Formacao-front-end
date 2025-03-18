@@ -15,6 +15,124 @@
             <label>Nome:</label>
             <input type="text">
         </div>
+        <!-- Atributo name -->
+         <div>
+            <label for="idade">Idade:</label>
+            <input type="text" name="idade">
+         </div>
+         <!-- Select -->
+          <div>
+            <label for="job">Selecione a sua profissao</label>
+            <select name="job" id="">
+                <option value="programador">Programador</option>
+                <option value="tester">Tester/QA</option>
+                <option value="devops">DevOps</option>
+            </select>
+          </div>
+          <!-- Atributo Select -->
+           <div>
+            <label for="contract">Voce leu os termos do contrato?</label>
+            <select name="contract" id="">
+                <option value="sim">Sim</option>
+                <option value="nao" selected>Nao</option>
+            </select>
+           </div>
+           <!-- Multiplas opçoes -->
+            <div>
+                <label for="items">Selecione os itens desejados:</label>
+                <select name="items" multiple>
+                    <option value="pera">Pera</option>
+                    <option value="feijao">Feijao</option>
+                    <option value="arroz">Arroz</option>
+                    <option value="milho">Milho</option>
+                </select>
+            </div>
+            <!-- Textarea -->
+             <div>
+                <label for="comentario">Escreva abaixo o que voce achou do post:</label>
+                <textarea name="comentario">
+
+                </textarea>
+             </div>
+             <!-- fieldset e legend -->
+              <div>
+                <fieldset>
+                    <legend>Preencha as suas informaçoes</legend>
+                    <label for="firstname">Nome:</label>
+                    <input type="text" name="firstname" id="">
+                    <label for="lastname">Sobrenome:</label>
+                    <input type="text" name="lastname" id="">
+                </fieldset>
+              </div>
+              <!-- Datalist -->
+               <div>
+                <label for="flavor">Escolha um sabor:</label>
+                <input type="text" list="flavors" name="flavor" >
+
+                <datalist id="flavors">
+                    <option value="Cereja"></option>
+                    <option value="Morango"></option>
+                    <option value="Abacaxi"></option>
+                    <option value="Chocolate"></option>
+                </datalist>
+               </div>
+               <!-- Senha -->
+                <div>
+                    <label for="password">Digite sua senha:</label>
+                    <input type="password" name="password">
+                </div>
+                <!-- Radio buttom -->
+                 <div>
+                    <label for="car_model">Escolha o modelo do seu carro</label>
+                    <div class="radio">
+                        <input type="radio" value="bmw" name="car_model">
+                        <label for="bmw">BMW</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" value="ferrari" name="car_model">
+                        <label for="ferrari">Ferrari</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" value="mercedes" name="car_model">
+                        <label for="mercedes">Mercedes</label>
+                    </div>
+                 </div>
+                 <!-- Checkbox -->
+                  <div>
+                    <label for="optionals">Opicionais do carro:</label>
+                    <div class="radio">
+                        <input type="checkbox" name="optionals[]" value="big_tires">
+                        <label for="big_tires">Pneus grandes</label>
+                    </div>
+                    <div class="radio">
+                        <input type="checkbox" name="optionals[]" value="turbo_engines">
+                        <label for="turbo_engines">Motor Turbo</label>
+                    </div>
+                    <div class="radio">
+                        <input type="checkbox" name="optionals[]" value="hybrid">
+                        <label for="hybrid">Híbrido</label>
+                    </div>
+                  </div>
+                  <!-- Datas -->
+                   <div>
+                    <label for="birthday">Data de Nascimento:</label>
+                    <input type="date" name="birthday">
+                   </div>
+                   <!-- Arquivos -->
+                    <div>
+                        <label for="image">Insira a sua imagem:</label>
+                        <input type="file" name="image" >
+                    </div>
+                    <!-- Numeros -->
+                     <div>
+                        <label for="salary">Quanto voce ganha no seu emprego atual?</label>
+                        <input type="number" name="salary" id="">
+                     </div>
+
+                <!-- resetar form -->
+                 <input type="reset" value="Limpar">
+         <!-- Envio de form -->
+          <input type="submit" value="Enviar">
      </form>
 </body>
 </html>
