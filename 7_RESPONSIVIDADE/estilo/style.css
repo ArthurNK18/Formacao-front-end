@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* Media Query */
+h1 {
+    color: red;
+}
+
+@media screen and (max-width: 500px) { 
+    h1 {
+        color: purple;
+    }
+    
+}
+
+/* Min width */
+
+p {
+    color: #000;
+    background-color: red;
+}
+
+@media screen and (min-width: 800px) {
+    p {
+        background-color: #789;
+        color: red;
+    }
+    
+}
+
+/* Landscape */
+h3 {
+    display: none;
+}
+@media screen and (orientation: landscape) and (max-width: 500px    ) {
+    h3 {
+        display: block;
+    }
+    
+}
