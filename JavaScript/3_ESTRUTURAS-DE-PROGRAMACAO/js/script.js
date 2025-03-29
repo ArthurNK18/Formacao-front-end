@@ -182,3 +182,43 @@ for(let g = 20; g > 10; g--) {
         break;
     }
 }
+
+// continue
+for(let s = 0; s < 10; s = s + 1) {
+    // operador resto
+    if(s % 2 === 0 ) {
+        console.log("Número par")
+        continue
+    }
+    console.log(s)
+}
+
+// switch
+const job = "Engenheiro"
+
+switch(job) {
+    case "Programador":
+        console.log("Você é um programador")
+        break
+    case "Advogado":
+        console.log("Você é um advogado")
+        break
+    case "Engenheiro":
+        console.log("Você é um engenheiro")
+        break
+    default:
+        console.log("Profissão não encontrada")
+}
+
+// switch "errado"
+const l = 100
+switch(l) {
+    case 200:
+        console.log("L é 200")
+        case 100:
+            console.log("L é 100")
+            case 10:
+                console.log("L é 10")
+                default:
+                    console.log("L não foi encontrado")
+}
