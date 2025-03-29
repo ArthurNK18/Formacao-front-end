@@ -129,56 +129,8 @@ if (userName === "José") {
 
 let p = 0
 
-while (p < 5) {
+while(p < 5) {
     console.log(`Repetindo ${p}`)
-    p = p + 1 
-}
-
-// Loop infinito
-let x = 10
-
-// while(x > 5) {
-//     console.log(`Imprimindo ${x}`)
-// }
-
-// Do while
-let o = 10
-
-do {
-    console.log(`Valor de o: ${o}`)
-    o-- 
-} while(o > 1)
-
-
-// For
-for (let t = 0; t < 10; t++) {
-    console.log("Repetindo algo...")
-
-}
-
-let r = 10;
-
-for(r; r > 0; r = r - 1) {
-    console.log(`O r está diminuindo: ${r}`)
-}
-
-// Identação
-for(let u = 0; u < 10; u++) {
-    if(u * 2 > 10) {
-        console.log(`Maior que 10! ${u}`)
-    } else {
-        if(u / 2 === 0) {
-            console.log("Deu zero!")
-        }
-    }
-}
-
-// Break
-for(let g = 20; g > 10; g--) {
-    console.log(`O valor de g é: ${g}`)
-
-    if(g === 12) {
-        console.log("O g é 12!")
-        break;
-    }
+    p = + 1;
+    
 }
