@@ -74,3 +74,110 @@ console.log(car)
 delete car.km
 
 console.log(car)
+
+// Mais sobre objetos
+const obj = {
+    a: "Teste",
+    b: true
+}
+
+console.log(obj instanceof Object)
+
+const obj2 = {
+    c: []
+
+}
+
+Object.assign(obj2, obj)
+
+console.log(obj2)
+
+// Conhecendo melhor o objeto
+console.log(Object.keys(obj))
+
+console.log(Object.keys(obj2))
+
+console.log(Object.keys(car))
+
+console.log(Object.entries(car))
+
+// Mutação
+const a = {
+    name:"Arthur"
+}
+
+const b = a
+
+console.log(a)
+console.log(b)
+
+console.log(a === b)
+
+a.age = 31
+
+console.log(a)
+console.log(b)
+
+delete b.age
+
+console.log(a)
+console.log(b)
+
+// Loop em array
+const users = ["Rabelo", "David", "Pedro", "Arthur"]
+
+for(let i = 0; i < users.length; i++) {
+    console.log(`Listando o usuário: ${users[i]}`)
+}
+
+// Métodos push e pop
+const array =["a", "b", "c"]
+
+array.push("d")
+
+console.log(array)
+
+console.log(array.length)
+
+array.pop()
+
+console.log(array)
+
+const itemRemovido = array.pop()
+
+console.log(itemRemovido)
+
+console.log(array)
+
+array.push("z", "x", "y")
+
+console.log(array)
+
+// Shift e unshift
+const letters = ["a", "b", "c"]
+
+const letter  = letters.shift()
+
+console.log(letter)
+
+console.log(letters)
+
+letters.unshift("p", "q", "r")
+
+letters.unshift("z")
+
+console.log(letters)
+
+// Indexof e Lastindexof
+const myElements = ["Morango","Maçã", "Abacate", "Pêra", "Abacate"]
+
+console.log(myElements.indexOf("Maçã"))
+
+console.log(myElements.indexOf("Abacate"))
+
+console.log(myElements[2])
+
+console.log(myElements[myElements.indexOf("Abacate")])
+
+console.log(myElements.lastIndexOf("Abacate"))
+
