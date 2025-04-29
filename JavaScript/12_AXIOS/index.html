@@ -5,10 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axios</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="estilo/style.css">
+    <!-- Global instance -->
+    <!-- <script src="global.js"></script> -->
+    <!-- Custom instance -->
+    <script src="JS/custom.js"></script>
+    <!-- Interceptors -->
+     <script src="JS/intecerptors.js"></script>
     <script src="JS/script.js" defer></script>
 </head>
 <body>
     <h1>Axios</h1>
+    <!-- Post -->
+     <h2>Insira um novo post:</h2>
+     <form id="post-form">
+        <div>
+            <input type="text" name="title" id="title" placeholder="Digite o título">
+        </div>
+        <div>
+            <textarea name="body" id="body">
+
+            </textarea>
+        </div>
+        <input type="submit" value="Criar post">
+     </form>
+    <!-- Inserindo dados -->
+     <div id="user-container">
+        
+     </div>
 </body>
 </html>
