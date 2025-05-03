@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Css -->
+    <title>Todo</title>
     <link rel="stylesheet" href="estilos/style.css">
     <!-- Font awesome -->
     <link
@@ -14,8 +13,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <!-- JS -->
-    <script src="JS/script.js" defer></script>
+  <script src="JS/script.js" defer></script>
 </head>
 <body>
     <div class="todo-container">
@@ -39,7 +37,7 @@
                     <i class="fa-solid fa-check-double"></i>
                 </button>
             </div>
-            <button id="cancel-edit-btn"></button>
+            <button id="cancel-edit-btn">Cancelar</button>
         </form>
         <div class="toolbar">
             <div id="search">
@@ -59,15 +57,18 @@
                     <option value="todo">A fazer</option>
                 </select>
             </div>
+        </div>
             <div class="todo-list">
-                <div class="todo done">
+                <div class="todo">
                     <h3>Estou fazendo alguma coisa...</h3>
                     <button class="finish-todo">
                         <i class="fa-solid fa-check"></i>
                     </button>
+                    
                     <button class="edit-todo">
                         <i class="fa-solid fa-pen"></i>
                     </button>
+
                     <button class="remove-todo">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -86,6 +87,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
