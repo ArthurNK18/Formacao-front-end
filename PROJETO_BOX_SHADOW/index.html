@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-                        <div class="form-control">
+                <div class="form-control">
             <div class="range-input">
                     <label for="blur">Intensidade do Borrão (Blur):</label>
                     <input type="range" id="blur" name="blur" min="0" max="100" value="10">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-                        <div class="form-control">
+                <div class="form-control">
             <div class="range-input">
                     <label for="spread">Intensidade doo espalhamento (Spread):</label>
                     <input type="range" id="spread" name="spread" min="-100" max="100" value="3">
@@ -51,6 +51,34 @@
             <div class="reference-input">
                     <input type="text" id="spread-value" name="spread-value">
                     <p>px</p>
+                </div>
+            </div>
+
+                <div class="form-control">
+            <div class="range-input">
+                    <label for="color">Cor da sombra:</label>
+                    <input type="color" id="color" name="color" value="#000000">
+                </div>
+            <div class="reference-input">
+                    <input type="text" id="color-value" name="color-value">
+                </div>
+            </div>
+
+                <div class="form-control">
+            <div class="range-input">
+                    <label for="opacity">Opacidade:</label>
+                    <input type="range" id="opacity" name="opacity" min="0" max="1" value="1" step="0.01">
+                </div>
+            <div class="reference-input">
+                    <input type="text" id="opacity-value" name="opacity-value">
+                    <p>px</p>
+                </div>
+            </div>
+
+                 <div class="form-control">
+            <div class="range-input">
+                <label for="opacity">Sombra interna? (inset)</label>
+                <input type="checkbox" name="inset" id="inset">
                 </div>
             </div>
         </div>
@@ -63,10 +91,11 @@
         <div id="generated-rule">
         <h2>Copie e cole no seu arquivo de CSS:</h2>
         <div id="rules-area">
-            <p id="rule">box-shadow: <span></span></p>
-            <p id="webkit-rule">webkit-box-shadow: <span></span></p>
-            <p id="moz-rule">moz-box-shadow: <span></span></p>
+            <p id="rule">box-shadow: <span></span>;</p>
+            <p id="webkit-rule">webkit-box-shadow: <span></span>;</p>
+            <p id="moz-rule">moz-box-shadow: <span></span>;</p>
         </div>
+        <p id="copy-instructions">Clique no quadro acima para copiar as regras</p>
     </div>
 </body>
 </html>
