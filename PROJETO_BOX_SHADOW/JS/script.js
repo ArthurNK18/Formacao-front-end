@@ -14,6 +14,7 @@ class BoxShadowGenerator {
         this.opacity = opacity;
         this.opacityRef = opacityRef;
         this.inset = inset;
+        this.insetRef = inset.checked
         this.previewBox = previewBox;
         this.rule = rule;
         this.webkitRule = webkitRule ;
@@ -26,6 +27,7 @@ class BoxShadowGenerator {
         this.spreadRef.value = this.spread.value;
         this.blurRef.value = this.blur.value;
         this.colorRef.value = this.color.value;
+        this.opacityRef.value = this.opacity.value;
 
         this.applyRule();
         this.showRule();
@@ -34,7 +36,7 @@ class BoxShadowGenerator {
     applyRule() {
         const rgbValue = this.hexToRgb(this.colorRef.value);
 
-        const shadowRule = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue})`;
+        const shadowRule = `${this.insetRef ? "inset": ""} ${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px rgba(${rgbValue}, ${this.opacityRef.value})`;
 
         this.previewBox.style.boxShadow = shadowRule;
         this.currentRule = shadowRule;
@@ -62,7 +64,12 @@ class BoxShadowGenerator {
             break;
             case "color":
                 this.colorRef.value = value;
-                this.previewBox.style.backgroundColor = value;
+            break;
+            case "opacity":
+                this.opacityRef.value = value;
+            break;
+           case "inset":
+                this.insetRef = value;
             break;
         }
 
@@ -88,6 +95,7 @@ const spreadRef = document.querySelector("#spread-value");
 
 const color = document.querySelector("#color");
 const colorRef = document.querySelector("#color-value");
+
 const opacity = document.querySelector("#opacity");
 const opacityRef = document.querySelector("#opacity-value");
 const inset = document.querySelector("#inset");
@@ -100,7 +108,25 @@ const webkitRule = document.querySelector("#webkit-rule span");
 
 const mozRule = document.querySelector("#moz-rule span");
 
-const boxShadow = new BoxShadowGenerator(horizontal, horizontalRef, vertical, verticalRef, blur, blurRef, spread, spreadRef, color, colorRef, opacity, opacityRef, inset, previewBox, rule, webkitRule, mozRule)
+const boxShadow = new BoxShadowGenerator(
+  horizontal,
+  horizontalRef,
+  vertical,
+  verticalRef,
+  blur,
+  blurRef,
+  spread,
+  spreadRef,
+  color,
+  colorRef,
+  opacity,
+  opacityRef,
+  inset,
+  previewBox,
+  rule,
+  webkitRule,
+  mozRule
+);
 
 boxShadow.initialize()
 
@@ -133,4 +159,33 @@ color.addEventListener("input", (e) => {
     const value = e.target.value;
 
     boxShadow.updateValue("color", value);
-})
+});
+
+opacity.addEventListener("input", (e) => {
+    const value = e.target.value;
+
+    boxShadow.updateValue("opacity", value);
+});
+
+inset.addEventListener("input", (e) => {
+    const value = e.target.checked;
+
+    boxShadow.updateValue("inset", value);
+});
+
+// Copiar regra
+const rulesArea = document.querySelector("#rules-area");
+const copyinstructions = document.querySelector("#copy-instructions");
+
+rulesArea.addEventListener("click", () => {
+    const rules = rulesArea.innerText.replace(/^\s*\n/gm, "");
+
+    navigator.clipboard.writeText(rules).then(() => {
+        copyinstructions.innerText = "Regra copiada com sucesso!";
+
+        setTimeout(() => {
+            copyinstructions.innerText = "Clique no quadro acima para copiar as regras";
+
+        }, 1000);
+    });
+});
