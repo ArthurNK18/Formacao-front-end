@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 
 import { useFetch } from './hooks/UseFatch';
 
-const url = "http://localhost:3000/products"
+const url = "http://localhost:3000/products";
 
 
 import './App.css'
@@ -12,7 +12,7 @@ function App() {
   const [products, setproducts] = useState([]);
 
   // Custom Hook
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   // useEffect(() => {
 
@@ -34,21 +34,26 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const product = {
+      name,
+      price
+    }
 
-  const product = {name, price}
+  // const res = await fetch(url, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: JSON.stringify(product),
+  // });
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(product),
-  });
+  // // Carregamento dinâmico
+  // const addedProduct = await res.json();
 
-  // Carregamento dinâmico
-  const addedProduct = await res.json();
+  // setproducts((prevProducts) => [...prevProducts, addedProduct]);
 
-  setproducts((prevProducts) => [...prevProducts, addedProduct]);
+    // Refatorando post
+    httpConfig(products, "POST");
 
 };
 
@@ -77,6 +82,13 @@ function App() {
       </div>
     </div>
   )
+  useEffect(() => {
+  if (items) {
+    setproducts(items);
+  }
+}, [items]);
 }
+
+
 
 export default App

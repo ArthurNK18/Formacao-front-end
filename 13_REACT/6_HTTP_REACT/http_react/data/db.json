@@ -3,17 +3,17 @@
     {
       "name": "capa de chuva",
       "price": "50.50",
-      "id": 5
+      "id": "5"
     },
     {
       "name": "teclado",
       "price": "110",
-      "id": 6
+      "id": "6"
     },
     {
       "name": "cadeira",
       "price": "200",
-      "id": 7
+      "id": "7"
     },
     {
       "id": "b11f",
@@ -24,6 +24,53 @@
       "id": "08e2",
       "name": "testando carregamento",
       "price": "20"
+    },
+    {
+      "id": "86ed",
+      "name": "teste",
+      "price": "123"
+    },
+    {
+      "id": "e82b"
+    },
+    {
+      "id": "5c0e"
+    },
+    {
+      "id": "eaef"
+    },
+    {
+      "id": "20a4"
+    },
+    {
+      "id": "120a"
+    },
+    {
+      "id": "9fbd"
+    },
+    {
+      "id": "5eeb"
+    },
+    {
+      "id": "1433"
+    },
+    {
+      "id": "4a9d"
+    },
+    {
+      "id": "db4b"
+    },
+    {
+      "id": "c82f"
+    },
+    {
+      "id": "c75f"
+    },
+    {
+      "id": "89c2"
+    },
+    {
+      "id": "f9ab"
     }
   ]
 }
