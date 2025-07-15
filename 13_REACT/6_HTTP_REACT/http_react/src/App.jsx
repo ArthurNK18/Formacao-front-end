@@ -1,6 +1,6 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect} from "react";
 
-import { useFetch } from './hooks/UseFatch';
+import { useFetch } from "./hooks/UseFatch";
 
 const url = "http://localhost:3000/products";
 
@@ -34,10 +34,15 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const product = {
-      name,
-      price
-    }
+
+        // Refatorando post
+    httpConfig({name,price}, "POST");
+
+
+  //   const product = {
+  //     name,
+  //     price,
+  //   }
 
   // const res = await fetch(url, {
   //   method: "POST",
@@ -51,18 +56,19 @@ function App() {
   // const addedProduct = await res.json();
 
   // setproducts((prevProducts) => [...prevProducts, addedProduct]);
+  }
 
-    // Refatorando post
-    httpConfig(products, "POST");
 
-};
-
-  return (
+    return (
     <div className="App">
       <h1>HTTP em React</h1>
+      {/* Loading */}
+      {loading && <p>carregando...</p>}
+      {/* trantando error */}
+      {error && <p>{error}</p>}
       {/* {Resgate dos dados} */}
       <ul>
-        {items &&   items.map((products) => (
+        {items && items.map((products) => (
           <li key={products.id}>{products.name} - R${products.price}</li>
         ))}
       </ul>
@@ -77,18 +83,13 @@ function App() {
             <span>Preço</span>
             <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}/>
           </label>
-          <input type="submit" value="Enviar"/>
+          {/* <input type="submit" value="Enviar"/> */}
+          {/* loading post */}
+          {loading && <input type="submit" disabled value="Aguarde..."/>}
+          {!loading && <input type="submit" value="Criar..."/>}
         </form>
       </div>
     </div>
   )
-  useEffect(() => {
-  if (items) {
-    setproducts(items);
-  }
-}, [items]);
 }
-
-
-
 export default App
